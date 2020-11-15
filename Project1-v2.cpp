@@ -140,7 +140,7 @@ int main() {
 //            getline(cin,s);
 //            const char* ss = s.c_str();
 //            while (*ss) {
-//                if (((*ss)!='.') && ((*ss)<'0') && ((*ss)>'9') && ((*ss)!=' ') && ((*ss)!='\0')) {
+//                if (((*ss)!='.') && (((*ss)<'0') || ((*ss)>'9')) && ((*ss)!=' ') && ((*ss)!='\0')) {
 //                    jj = false;
 //                    break;
 //                }

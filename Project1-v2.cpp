@@ -215,6 +215,10 @@ int main() {
         << b->row << "*" << b->column << " using openBLAS ints : " << diff3.count() * 1000 << " ms\n";
 //    res1->print();
 //    res2->print();
+//    while (*res) {
+//        cout << *res << " ";
+//        *res = *res+1;
+//    }
     delete a;
     delete b;
     return 0;

@@ -62,12 +62,12 @@ matrix* product2(const matrix *a, const matrix* b)
 {
     size_t bound = a->column;
     auto* res = new matrix(a->row,b->row);
+#pragma omp parallel for
     for (int i=0; i<a->row; i++) {
         for (int j=0; j<b->row; j++) {
             float sum[8] = {0};
             __m256 aa, bb;
             __m256 c = _mm256_setzero_ps();
-            #pragma omp parallel for
             for (size_t k = 0; k < bound; k+=8) {
                 aa = _mm256_load_ps(a->values[i] + k);
                 bb = _mm256_load_ps(b->values[j] + k);
